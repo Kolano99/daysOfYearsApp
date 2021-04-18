@@ -18,6 +18,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, ShoppingSundaysActivity::class.java)
             startActivity(intent)
         }
+        findViewById<Button>(R.id.buttonWorkingDays).setOnClickListener {
+            val intent = Intent(this, WorkingDaysActivity::class.java)
+            startActivity(intent)
+        }
+
         val numberPicker = findViewById<NumberPicker>(R.id.yearPicker)
         if (numberPicker != null) {
             numberPicker.minValue = 1900

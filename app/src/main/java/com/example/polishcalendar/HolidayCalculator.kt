@@ -2,6 +2,7 @@ package com.example.polishcalendar
 
 import java.time.DayOfWeek
 import java.time.LocalDate
+import java.time.Month
 import java.time.temporal.TemporalAdjusters
 import kotlin.math.floor
 
@@ -39,6 +40,23 @@ class HolidayCalculator {
             return LocalDate.of(year, 12, 24)
                 .with(TemporalAdjusters.previousOrSame(DayOfWeek.SUNDAY))
                 .minusWeeks(3)
+        }
+
+        fun getBankingHolidays(year: Int): Set<LocalDate> {
+            val easter = calculateEaster(year)
+            return setOf(
+                easter.plusDays(1),
+                calculateFeastOfCorpusChristi(easter),
+                LocalDate.of(year, Month.JANUARY, 1),
+                LocalDate.of(year, Month.JANUARY, 6),
+                LocalDate.of(year, Month.MAY, 1),
+                LocalDate.of(year, Month.MAY, 3),
+                LocalDate.of(year, Month.AUGUST, 15),
+                LocalDate.of(year, Month.NOVEMBER, 1),
+                LocalDate.of(year, Month.NOVEMBER, 11),
+                LocalDate.of(year, Month.DECEMBER, 25),
+                LocalDate.of(year, Month.DECEMBER, 26)
+            )
         }
     }
 }
