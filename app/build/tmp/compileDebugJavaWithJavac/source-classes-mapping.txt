@@ -1,0 +1,2 @@
+com/example/polishcalendar/BuildConfig.java
+ com.example.polishcalendar.BuildConfig
