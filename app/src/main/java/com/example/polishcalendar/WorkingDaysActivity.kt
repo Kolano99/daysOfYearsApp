@@ -61,7 +61,7 @@ class WorkingDaysActivity : AppCompatActivity() {
             holidays.addAll(HolidayCalculator.getBankingHolidays(year))
         }
         var businessDays = 0L
-        while (mutableStartDate < endDate) {
+        while (mutableStartDate <= endDate) {
             val dayOfWeek = mutableStartDate.dayOfWeek
             if (!holidays.contains(mutableStartDate) &&
                 dayOfWeek != DayOfWeek.SATURDAY &&
