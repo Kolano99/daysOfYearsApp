@@ -1,10 +1,10 @@
 package com.example.polishcalendar
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.DatePicker
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import java.time.DayOfWeek
 import java.time.LocalDate
 import java.time.ZoneId
@@ -36,16 +36,30 @@ class WorkingDaysActivity : AppCompatActivity() {
             if (newStartDate > oldEndDate) {
                 endDate.updateDate(year, monthOfYear, dayOfMonth)
             }
-            setWorkingDays(getWorkingDays(newStartDate, LocalDate.of(endDate.year, endDate.month + 1, endDate.dayOfMonth)))
+            setWorkingDays(
+                getWorkingDays(
+                    newStartDate,
+                    LocalDate.of(endDate.year, endDate.month + 1, endDate.dayOfMonth)
+                )
+            )
         }
 
         endDate.setOnDateChangedListener { _, year, monthOfYear, dayOfMonth ->
             val newEndDate = LocalDate.of(year, monthOfYear + 1, dayOfMonth)
-            val oldStartDate = LocalDate.of(startDate.year, startDate.month + 1, startDate.dayOfMonth)
+            val oldStartDate =
+                LocalDate.of(startDate.year, startDate.month + 1, startDate.dayOfMonth)
             if (newEndDate < oldStartDate) {
                 startDate.updateDate(year, monthOfYear, dayOfMonth)
             }
-            setWorkingDays(getWorkingDays(LocalDate.of(startDate.year, startDate.month + 1, startDate.dayOfMonth), newEndDate))
+            setWorkingDays(
+                getWorkingDays(
+                    LocalDate.of(
+                        startDate.year,
+                        startDate.month + 1,
+                        startDate.dayOfMonth
+                    ), newEndDate
+                )
+            )
         }
     }
 

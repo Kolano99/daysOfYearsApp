@@ -14,9 +14,12 @@ class ShoppingSundaysCalculator {
             for (month in listOfMonths) {
                 listOfShoppingSundays.add(getMonthlyShoppingSunday(year, month))
             }
-            listOfShoppingSundays.addAll(listOf(getSpecialShoppingSunday(HolidayCalculator.calculateEaster(year)),
-                getSpecialShoppingSunday(LocalDate.of(year, 12, 25)),
-                getSpecialShoppingSunday(LocalDate.of(year, 12, 25).minusDays(7)))
+            listOfShoppingSundays.addAll(
+                listOf(
+                    getSpecialShoppingSunday(HolidayCalculator.calculateEaster(year)),
+                    getSpecialShoppingSunday(LocalDate.of(year, 12, 25)),
+                    getSpecialShoppingSunday(LocalDate.of(year, 12, 25).minusDays(7))
+                )
             )
 
             return listOfShoppingSundays.sorted()

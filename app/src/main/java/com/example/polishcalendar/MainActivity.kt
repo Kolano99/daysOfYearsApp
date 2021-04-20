@@ -2,11 +2,11 @@ package com.example.polishcalendar
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.NumberPicker
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     @SuppressLint("SetTextI18n")
-    private fun setText(year : Int) {
+    private fun setText(year: Int) {
         val ashWednesday = findViewById<TextView>(R.id.ashWednesday)
         val easter = findViewById<TextView>(R.id.easter)
         val feastOfCorpusChristi = findViewById<TextView>(R.id.feastOfCorpusChristi)
@@ -45,7 +45,8 @@ class MainActivity : AppCompatActivity() {
         val easterDate = HolidayCalculator.calculateEaster(year)
         ashWednesday.text = "Popielec: ${HolidayCalculator.calculateAshWednesday(easterDate)}"
         easter.text = "Wielkanoc: $easterDate"
-        feastOfCorpusChristi.text = "Boże Ciało: ${HolidayCalculator.calculateFeastOfCorpusChristi(easterDate)}"
+        feastOfCorpusChristi.text =
+            "Boże Ciało: ${HolidayCalculator.calculateFeastOfCorpusChristi(easterDate)}"
         advent.text = "Adwent: ${HolidayCalculator.calculateAdvent(year)}"
     }
 }
