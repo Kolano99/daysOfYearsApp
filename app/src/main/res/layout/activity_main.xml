@@ -23,7 +23,7 @@
         android:layout_width="65dp"
         android:layout_height="134dp"
         android:layout_marginTop="76dp"
-        app:layout_constraintBottom_toTopOf="@+id/ashWednesday"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSundays"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
@@ -64,49 +64,43 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:layout_constraintVertical_chainStyle="spread_inside" />
 
-    <TextView
-        android:id="@+id/ashWednesday"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Popielec: "
-        app:layout_constraintBottom_toTopOf="@+id/easter"
+        android:divider="@drawable/divider"
+        android:orientation="vertical"
+        android:showDividers="middle"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintHorizontal_bias="0.108"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.948" />
+        app:layout_constraintVertical_bias="0.623">
 
-    <TextView
-        android:id="@+id/feastOfCorpusChristi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Boże Ciało:"
-        app:layout_constraintBottom_toTopOf="@+id/advent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/ashWednesday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Popielec: " />
 
-    <TextView
-        android:id="@+id/easter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="Wielkanoc:"
-        app:layout_constraintBottom_toTopOf="@+id/feastOfCorpusChristi"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.084"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/feastOfCorpusChristi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Boże Ciało:"
+            app:layout_constraintBottom_toTopOf="@+id/advent" />
 
-    <TextView
-        android:id="@+id/advent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="184dp"
-        android:text="Adwent:"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/feastOfCorpusChristi"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/feastOfCorpusChristi" />
+        <TextView
+            android:id="@+id/easter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wielkanoc:" />
+
+        <TextView
+            android:id="@+id/advent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Adwent:" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

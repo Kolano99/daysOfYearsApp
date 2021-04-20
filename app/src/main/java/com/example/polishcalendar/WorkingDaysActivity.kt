@@ -30,7 +30,7 @@ class WorkingDaysActivity : AppCompatActivity() {
             endDate.minDate = minDate
             endDate.maxDate = maxDate
         }
-        startDate.setOnDateChangedListener { view, year, monthOfYear, dayOfMonth ->
+        startDate.setOnDateChangedListener { _, year, monthOfYear, dayOfMonth ->
             val newStartDate = LocalDate.of(year, monthOfYear + 1, dayOfMonth)
             val oldEndDate = LocalDate.of(endDate.year, endDate.month + 1, endDate.dayOfMonth)
             if (newStartDate > oldEndDate) {
@@ -39,7 +39,7 @@ class WorkingDaysActivity : AppCompatActivity() {
             setWorkingDays(getWorkingDays(newStartDate, LocalDate.of(endDate.year, endDate.month + 1, endDate.dayOfMonth)))
         }
 
-        endDate.setOnDateChangedListener { view, year, monthOfYear, dayOfMonth ->
+        endDate.setOnDateChangedListener { _, year, monthOfYear, dayOfMonth ->
             val newEndDate = LocalDate.of(year, monthOfYear + 1, dayOfMonth)
             val oldStartDate = LocalDate.of(startDate.year, startDate.month + 1, startDate.dayOfMonth)
             if (newEndDate < oldStartDate) {
